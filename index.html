@@ -164,7 +164,7 @@
     color: var(--forest);
     border-color: var(--clay);
   }
-  .btn-primary:hover { background: transparent; border-color: var(--clay); }
+  .btn-primary:hover { background: transparent; border-color: var(--clay); color: var(--clay); }
   .btn-outline {
     background: transparent;
     border-color: var(--forest);
@@ -656,22 +656,17 @@
     50% { opacity: 0; }
   }
 
-  /* ── SUBTLE GLITCH HOVER (nav links + section titles) ── */
-  .nav-links a, .glitch-hover {
-    position: relative;
+  /* ── TITLE TYPEWRITER CURSOR ── */
+  .title-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 0.85em;
+    margin-left: 3px;
+    background: var(--clay);
+    animation: caretBlink 0.9s step-end infinite;
+    vertical-align: -0.1em;
   }
-  .nav-links a:hover, .glitch-hover:hover {
-    animation: glitchShift 0.25s steps(2, end);
-    text-shadow: -0.5px 0 var(--clay), 0.5px 0 rgba(63,79,68,0.4);
-  }
-  @keyframes glitchShift {
-    0%   { transform: translate(0,0); }
-    20%  { transform: translate(-0.5px, 0.5px); }
-    40%  { transform: translate(0.5px, -0.5px); }
-    60%  { transform: translate(-0.5px, 0); }
-    80%  { transform: translate(0.5px, 0); }
-    100% { transform: translate(0,0); }
-  }
+  .title-cursor.done { opacity: 1; }
 
   /* ── TILT CARD DEPTH ── */
   .project-card { transform-style: preserve-3d; will-change: transform; }
@@ -735,7 +730,7 @@
 <!-- ABOUT -->
 <section id="about">
   <p class="section-tag">// 01 — about</p>
-  <h2 class="section-title glitch-hover">A bit about me</h2>
+  <h2 class="section-title"><span id="typed-title-1"></span><span class="title-cursor"></span></h2>
   <div class="about-grid">
     <div class="about-text">
       <p>I'm a self-taught developer with a background in <strong>graphic design</strong>, a sharp eye for detail and a knack for problem solving.</p>
@@ -769,7 +764,7 @@
 <!-- SKILLS -->
 <section id="skills">
   <p class="section-tag">// 02 — skills</p>
-  <h2 class="section-title glitch-hover">What I work with</h2>
+  <h2 class="section-title"><span id="typed-title-2"></span><span class="title-cursor"></span></h2>
   <div class="skills-grid">
     <div class="skill-group">
       <div class="skill-group-label">Frontend</div>
@@ -826,12 +821,12 @@
 <!-- PROJECTS -->
 <section id="projects">
   <p class="section-tag">// 03 — projects</p>
-  <h2 class="section-title glitch-hover">Things I've built</h2>
+  <h2 class="section-title"><span id="typed-title-3"></span><span class="title-cursor"></span></h2>
   <div class="projects-grid">
 
     <div class="project-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
       <div class="project-num">// 01</div>
-      <h3 class="project-title glitch-hover">30 Days of JavaScript</h3>
+      <h3 class="project-title">30 Days of JavaScript</h3>
       <p class="project-desc">30 mini-applications built in 30 days. A self-imposed challenge to master vanilla JS, DOM manipulation, and browser APIs. Includes a weather app, music player, quiz app, QR generator, and more.</p>
       <div class="project-tags">
         <span class="project-tag">JavaScript</span>
@@ -846,7 +841,7 @@
 
     <div class="project-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
       <div class="project-num">// 02</div>
-      <h3 class="project-title glitch-hover">30 Days of React</h3>
+      <h3 class="project-title">30 Days of React</h3>
       <p class="project-desc">A parallel challenge focused on React. Building component-based UIs, managing state with hooks, and integrating APIs. A practical deep-dive into the React ecosystem beyond tutorial territory.</p>
       <div class="project-tags">
         <span class="project-tag">React.js</span>
@@ -888,7 +883,7 @@
 
     <div class="project-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
       <div class="project-num">// 04</div>
-      <h3 class="project-title glitch-hover">Portfolio Website</h3>
+      <h3 class="project-title">Portfolio Website</h3>
       <p class="project-desc">This site. Built with vanilla HTML, CSS, and JS. No frameworks, no build tools. Designed from scratch with a custom colour palette, monospace typography, and smooth scroll animations.</p>
       <div class="project-tags">
         <span class="project-tag">HTML5</span>
@@ -903,7 +898,7 @@
 
     <div class="project-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
       <div class="project-num">// 05</div>
-      <h3 class="project-title glitch-hover">ReactJS Practice Exercises</h3>
+      <h3 class="project-title">ReactJS Practice Exercises</h3>
       <p class="project-desc">A collection of focused React exercises. Components, props, state, context, and hooks. Used as a personal reference and sandbox for experimenting with patterns.</p>
       <div class="project-tags">
         <span class="project-tag">React.js</span>
@@ -917,7 +912,7 @@
 
     <div class="project-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
       <div class="project-num">// 06</div>
-      <h3 class="project-title glitch-hover">jQuery Practice</h3>
+      <h3 class="project-title">jQuery Practice</h3>
       <p class="project-desc">Hands-on exercises exploring jQuery. DOM traversal, event handling, AJAX, and animations. Part of a broader effort to understand JavaScript at multiple abstraction levels.</p>
       <div class="project-tags">
         <span class="project-tag">jQuery</span>
@@ -935,7 +930,7 @@
 <!-- EXPERIENCE -->
 <section id="experience">
   <p class="section-tag">// 04 — experience</p>
-  <h2 class="section-title glitch-hover">Where I've been</h2>
+  <h2 class="section-title"><span id="typed-title-9"></span><span class="title-cursor"></span></h2>
   <div class="timeline">
     <div class="timeline-item">
       <div class="timeline-period">Sep 2025 — Mar 2026</div>
@@ -974,7 +969,7 @@
 <!-- CONTACT -->
 <section id="contact">
   <p class="section-tag">// 05 — contact</p>
-  <h2 class="section-title glitch-hover">Let's talk</h2>
+  <h2 class="section-title"><span id="typed-title-10"></span><span class="title-cursor"></span></h2>
   <div class="contact-inner">
     <div class="contact-text">
       <p>Whether it's a project, a question, or just to say hi — my inbox is open. I'm currently based in Windhoek and available for both local and remote work.</p>
@@ -1034,35 +1029,50 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // ── LETTER/NUMBER SCRAMBLE ANIMATION FOR HEADER ──
-  function scrambleText(elementId, targetText) {
-    const el = document.getElementById(elementId);
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$*&";
+  // ── LETTER/NUMBER SCRAMBLE ANIMATION ──
+  const scrambleChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$*&";
+
+  function scrambleElement(el, targetText) {
+    if (el._scrambleInterval) clearInterval(el._scrambleInterval);
     let iteration = 0;
-    
-    const interval = setInterval(() => {
+
+    el._scrambleInterval = setInterval(() => {
       el.textContent = targetText
         .split("")
         .map((letter, index) => {
           if (index < iteration) {
             return targetText[index];
           }
-          return chars[Math.floor(Math.random() * chars.length)];
+          return scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
         })
         .join("");
 
       if (iteration >= targetText.length) {
-        clearInterval(interval);
+        clearInterval(el._scrambleInterval);
+        el._scrambleInterval = null;
       }
-      
+
       iteration += 1 / 3;
     }, 40);
+  }
+
+  function scrambleText(elementId, targetText) {
+    const el = document.getElementById(elementId);
+    if (el) scrambleElement(el, targetText);
   }
 
   // Trigger scramble on load
   window.addEventListener('DOMContentLoaded', () => {
     scrambleText('scrambleName', 'Tiffany');
     scrambleText('scrambleLastName', 'Nels');
+  });
+
+  // ── SCRAMBLE ON HOVER (nav links) ──
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    const originalText = link.textContent;
+    link.addEventListener('mouseenter', () => {
+      scrambleElement(link, originalText);
+    });
   });
 
   // ── TYPEWRITER (hero role line) ──
@@ -1116,6 +1126,43 @@
   }, { threshold: 0.08 });
 
   document.querySelectorAll('section').forEach(s => observer.observe(s));
+
+  // ── TITLE TYPEWRITER (types out once, cursor blinks at end when done) ──
+  const titleTexts = {
+    'typed-title-1': "A bit about me",
+    'typed-title-2': "What I work with",
+    'typed-title-3': "Things I've built",
+    'typed-title-9': "Where I've been",
+    'typed-title-10': "Let's talk"
+  };
+
+  function typeTitleOnce(el, text, speed = 35) {
+    let i = 0;
+    (function step() {
+      el.textContent = text.slice(0, i);
+      if (i < text.length) {
+        i++;
+        setTimeout(step, speed);
+      }
+    })();
+  }
+
+  const titleObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        if (titleTexts[id]) {
+          typeTitleOnce(entry.target, titleTexts[id]);
+        }
+        titleObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  Object.keys(titleTexts).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) titleObserver.observe(el);
+  });
 
   // Scroll to Top Logic
   const scrollTopBtn = document.getElementById('scrollTopBtn');
